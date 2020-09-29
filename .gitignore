@@ -1,8 +1,0 @@
-Logs/
-Packages/
-Debug/
-Release/
-.vscode/
-*.csproj
-*.sln
-__pycache__

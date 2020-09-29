@@ -5,11 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour {
 
-    // 씬 로드
-    public void SceneLoad(string sceneName) {
-        SceneManager.LoadScene(sceneName);
-    }
-
     // 휴대폰 뒤로가기 버튼 (종료)
     void Update() {
         if (Application.platform == RuntimePlatform.Android) {
@@ -18,5 +13,10 @@ public class UIManager : MonoBehaviour {
                 return;
             }
         }
+    }
+
+    // 씬 로드
+    public void SceneLoad(string sceneName) {
+        SceneManager.LoadScene(sceneName);
     }
 }
