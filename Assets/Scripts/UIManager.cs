@@ -5,6 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour {
 
+    [SerializeField] GameObject buildingPrevObj;
+
+    GameObject BuildModeObj = null;
+
+    public void BuildMode() {
+        Debug.Log(BuildingData.Instance.name);
+        if (BuildModeObj == null) {
+            GameManager.s_select.selectObj = true;
+            BuildModeObj = Instantiate(buildingPrevObj);
+        }
+    }
+
+    public void BuildModeExit() {
+        if (BuildModeObj != null) {
+            GameManager.s_select.selectObj = false;
+            Destroy(BuildModeObj);
+            BuildModeObj = null;
+        }
+    }
+
     // 휴대폰 뒤로가기 버튼 (종료)
     void Update() {
         if (Application.platform == RuntimePlatform.Android) {
